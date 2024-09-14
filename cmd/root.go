@@ -30,9 +30,6 @@ to quickly create a Cobra application.`,
 	// Uncomment the following line if your bare application
 	// has an action associated with it:
 	Run: func(cmd *cobra.Command, args []string) {
-		if config.Verbose {
-			fmt.Println("SZEVASZ OCSEM")
-		}
 	},
 }
 
@@ -91,6 +88,7 @@ func init() {
 	rootCmd.PersistentFlags().StringVar(&cfgFile, "config", "", "config file (default is $HOME/.acloud.yaml)")
 	rootCmd.AddCommand(management.ManagementCmd)
 	rootCmd.AddCommand(interactiveCmd)
+	rootCmd.AddCommand(loginCmd)
 
 	// Cobra also supports local flags, which will only run
 	// when this action is called directly.
